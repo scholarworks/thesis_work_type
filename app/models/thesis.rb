@@ -13,7 +13,7 @@ class Thesis < ActiveFedora::Base
   end
 
   property :coverage, predicate: ::RDF::Vocab::DC.coverage do |index|
-    index.as :stored_searchable
+    index.as :stored_searchable, :facetable
   end
 
   property :sponsorship, predicate: ::RDF::Vocab::DC.description do |index|
@@ -28,7 +28,7 @@ class Thesis < ActiveFedora::Base
     index.as :stored_searchable, :facetable
   end
 
-  
+
   property :provenance, predicate: ::RDF::Vocab::DC.provenance
   property :date_accessioned, predicate: ::RDF::Vocab::DC.dateAccepted, multiple: false
 
